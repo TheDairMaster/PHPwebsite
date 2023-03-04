@@ -22,6 +22,7 @@
 			$contrat = $_POST['contrat'];
 			$company = $_POST['company'];
 			
+			# EDIT THIS WITH YOUR DATABASE SCHEMA
 			$req = "SELECT * FROM MARCHE_PUBLIC, ENTREPRISE WHERE SIRET = SIRET_BENEFICIAIRE AND DUREE_MAX_DU_MARCHE >= '" . $contrat . "' AND SIRET_BENEFICIAIRE = '" . $company . "' AND MONTANT_DU_MARCHE >= " . $montant . " ORDER BY DUREE_MAX_DU_MARCHE ". $tri;
 			$compte = "SELECT count(*) as NOMBRE FROM MARCHE_PUBLIC, ENTREPRISE WHERE SIRET = SIRET_BENEFICIAIRE AND DUREE_MAX_DU_MARCHE >= '" . $contrat . "' AND SIRET_BENEFICIAIRE = '" . $company . "' AND MONTANT_DU_MARCHE >= " . $montant . " ORDER BY MONTANT_DU_MARCHE ". $tri;
 			$filtre = lancerRequete($req, $mabase);
@@ -42,6 +43,7 @@
 			else
 			{
 				
+				# EDIT COLUMNS NAMES
 				echo "
 
 	<div class=\"container-fluid no-gutter\">
