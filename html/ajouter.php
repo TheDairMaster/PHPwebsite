@@ -15,12 +15,12 @@
 	$mail = $_POST['email'];
 	$droit = $_POST['droit'];
 	
-	$test = "SELECT COUNT(*) AS NOMBRE FROM utilisateur WHERE USERNAME = '$name'";
+	$test = "SELECT COUNT(*) AS NOMBRE FROM utilisateur WHERE USERNAME = '$name'"; # EDIT THIS WITH YOUR DATABASE SCHEMA
 	$resultat = lancerRequete($test, $mabase);
 	echo $resultat[0]->NOMBRE;
 	if($resultat[0]->NOMBRE == 0)
 	{
-		$sql =  "INSERT INTO utilisateur (USERNAME, PASSWORD, EMAIL, TYPE) VALUES ('$name', '$password', '$mail', '$droit')";
+		$sql =  "INSERT INTO utilisateur (USERNAME, PASSWORD, EMAIL, TYPE) VALUES ('$name', '$password', '$mail', '$droit')"; # EDIT THIS WITH YOUR DATABASE SCHEMA
 		$mabase->query($sql);
 		header('Location: index.php?page=users');
 	}
