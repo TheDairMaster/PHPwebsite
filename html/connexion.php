@@ -1,9 +1,9 @@
 <?php
-$HOST='10.153.3.17';
-$SID='db01';
-$PORT='1521';
-$USER='iut024';
-$MDP='iut024';    
+$HOST='10.0.0.1'; 	# CHANGE THIS
+$SID='db01';		#
+$PORT='1521';		#
+$USER='user';		#
+$MDP='passwd';    	#
     
 try {
 $config =
